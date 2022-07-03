@@ -1,0 +1,36 @@
+{
+  "name": "prasham",
+  "version": "3.0.4",
+  "description": "prasham",
+  "main": "index.html",
+  "directories": {
+    "example": "root"
+  },
+  "scripts": {
+    "open-app": "gulp open-app",
+    "start": "npm run open-app",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "prasham"
+  ],
+  "author": "Wasim Tamboli",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/material-kit/issues"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-open": "^3.0.1",
+    "sass": "^1.49.9"
+  }
+}
