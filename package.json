@@ -7,8 +7,9 @@
     "example": "root"
   },
   "scripts": {
+    "start": "http-server -p 5000",
     "open-app": "gulp open-app",
-    "start": "npm run open-app",
+    "start-app": "npm run open-app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp-watch"
   },

@@ -1,1 +1,3 @@
-web: http-server .build -p $PORT
+release: npm i
+
+web: http-server -p $PORT
