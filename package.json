@@ -10,7 +10,6 @@
     "start": "http-server -p $PORT",
     "open-app": "gulp open-app",
     "app-start": "npm run open-app",
-    "heroku-postbuild": "gulp open-app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp-watch"
   },
