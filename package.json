@@ -7,9 +7,9 @@
     "example": "root"
   },
   "scripts": {
-    "start-app": "http-server -p $PORT",
+    "start": "http-server -p $PORT",
     "open-app": "gulp open-app",
-    "start": "npm run open-app",
+    "start-app": "npm run open-app",
     "heroku-postbuild": "gulp open-app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp-watch"
