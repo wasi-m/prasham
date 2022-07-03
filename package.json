@@ -7,7 +7,7 @@
     "example": "root"
   },
   "scripts": {
-    "start": "http-server -p 5000",
+    "start": "http-server -p $PORT",
     "open-app": "gulp open-app",
     "start-app": "npm run open-app",
     "test": "echo \"Error: no test specified\" && exit 1",
