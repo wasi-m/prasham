@@ -1,1 +1,1 @@
-http-server .build -p $PORT
+web: http-server .build -p $PORT
