@@ -181,7 +181,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5">Prakriti Parikshan</h1>
+            <h1 class="text-white pt-3 mt-n5" id="head-toedit">Prakriti Parikshan</h1>           
           </div>
         </div>
       </div>
@@ -190,1083 +190,1127 @@
   </header>
   <!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
-
     <section>
       <div class="container py-4">
         <div class="row">
           <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
-            <form role="form" id="contact-form" method="post" autocomplete="off"></form>
-            <h3 class="text-center">Personal Info</h3>
-            <div class="card-body">
+            <form class="form-tohide" role="form" id="prakriti-form" method="post" autocomplete="off">
+              <h3 class="text-center">Personal Info</h3>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Full Name</label>
+                      <input class="form-control" type="text" name="name" id="inputName">
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-lg-6">
+                  <div class="input-group input-group-dynamic">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail4">
+                  </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input-group input-group-static">
+                      <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                      <input class="form-control datepicker" placeholder="Please select your birth date" type="text"
+                        id="inputBirthDate">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row mb-4">
+                  
+                  <div class="col-lg-6">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <select id="inputGender" class="form-control dropdown">
+                        <option selected>Choose your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-3">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Weight in kg</label>
+                      <input class="form-control" type="text" name="weight" id="inputWeight">
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Height in cm</label>
+                      <input class="form-control" type="text" name="height" id="inputHeight">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="text-center">Physical trait</h3>
+              <div class="card-body">
+
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputBodyType">1. Explain Your Body Type.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="bodyType1" name="bodyType" class="form-check-input" value="q1a">
+                          <label class="form-check-label" for="bodyType1">Thin</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="bodyType2" name="bodyType" class="form-check-input" value="q1b">
+                          <label class="form-check-label" for="bodyType2">Medium</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="bodyType3" name="bodyType" class="form-check-input" value="q1c">
+                          <label class="form-check-label" for="bodyType3">Large</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class=" text-start">
+                        <label for="inputAppetite">2. How you describe your appetite?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAppetite1" name="inputAppetite" class="form-check-input"
+                            value="q2a">
+                          <label class="form-check-label" for="inputAppetite1">Irregular</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAppetite2" name="inputAppetite" class="form-check-input"
+                            value="q2b">
+                          <label class="form-check-label" for="inputAppetite2">Strong</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAppetite3" name="inputAppetite" class="form-check-input"
+                            value="q2c">
+                          <label class="form-check-label" for="inputAppetite3">Poor</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAppetite4" name="inputAppetite" class="form-check-input"
+                            value="q2b">
+                          <label class="form-check-label" for="inputAppetite4">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputPhysicalActivity">3. Describe your physical activity.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputPhysicalActivity1" name="inputPhysicalActivity"
+                            class="form-check-input" value="q3a">
+                          <label class="form-check-label" for="inputPhysicalActivity1">Regular</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputPhysicalActivity2" name="inputPhysicalActivity"
+                            class="form-check-input" value="q3b">
+                          <label class="form-check-label" for="inputPhysicalActivity2">Sometimes</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputPhysicalActivity3" name="inputPhysicalActivity"
+                            class="form-check-input" value="q3c">
+                          <label class="form-check-label" for="inputPhysicalActivity3">Rarely</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSleep">4. How you describe your sleep?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSleep1" name="inputSleep" class="form-check-input" value="q4a">
+                          <label class="form-check-label" for="inputSleep1">Disturbed</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSleep2" name="inputSleep" class="form-check-input" value="q4b">
+                          <label class="form-check-label" for="inputSleep2">Moderate</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSleep3" name="inputSleep" class="form-check-input" value="q4c">
+                          <label class="form-check-label" for="inputSleep3">Sound</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputBowelMovement">5. How you describe your bowel movement?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBowelMovement1" name="inputBowelMovement"
+                            class="form-check-input" value="q5a">
+                          <label class="form-check-label" for="inputBowelMovement1">Constipated</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBowelMovement2" name="inputBowelMovement"
+                            class="form-check-input" value="q5b">
+                          <label class="form-check-label" for="inputBowelMovement2">Frequent</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBowelMovement3" name="inputBowelMovement"
+                            class="form-check-input" value="q5c">
+                          <label class="form-check-label" for="inputBowelMovement3">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSweat">6. How much you sweat?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSweat1" name="inputSweat" class="form-check-input" value="q6a">
+                          <label class="form-check-label" for="inputSweat1">Less</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSweat2" name="inputSweat" class="form-check-input" value="q6b">
+                          <label class="form-check-label" for="inputSweat2">A lot</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSweat3" name="inputSweat" class="form-check-input" value="q6c">
+                          <label class="form-check-label" for="inputSweat3">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputWeather">7. Which weather you prefer?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWeather1" name="inputWeather" class="form-check-input"
+                            value="q7a">
+                          <label class="form-check-label" for="inputWeather1">Monsoon</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWeather2" name="inputWeather" class="form-check-input"
+                            value="q7b">
+                          <label class="form-check-label" for="inputWeather2">Winter</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWeather3" name="inputWeather" class="form-check-input"
+                            value="q7c">
+                          <label class="form-check-label" for="inputWeather3">Spring</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputFood">8. What kind of food you prefer? (Select any two options from below
+                          list)</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8c" id="foodPrefrence1">
+                          <label class="form-check-label" for="foodPrefrence1">Sweet</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8b" id="foodPrefrence2">
+                          <label class="form-check-label" for="foodPrefrence2">Spicy</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8a" id="foodPrefrence3">
+                          <label class="form-check-label" for="foodPrefrence3">Salty</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8b" id="foodPrefrence4">
+                          <label class="form-check-label" for="foodPrefrence4">Sour</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8c" id="foodPrefrence5">
+                          <label class="form-check-label" for="foodPrefrence5">Bitter</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q8a" id="foodPrefrence6">
+                          <label class="form-check-label" for="foodPrefrence6">Astringent</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputThirst">9. How you describe your thirst?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputThirst1" name="inputThirst" class="form-check-input" value="q9a">
+                          <label class="form-check-label" for="inputThirst1">Irregular</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputThirst2" name="inputThirst" class="form-check-input" value="q9b">
+                          <label class="form-check-label" for="inputThirst2">Often Thirsty</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputThirst3" name="inputThirst" class="form-check-input" value="q9c">
+                          <label class="form-check-label" for="inputThirst3">Rarely Thirsty</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputThirst4" name="inputThirst" class="form-check-input" value="q9d">
+                          <label class="form-check-label" for="inputThirst4">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputVoice">10. How your voice sound to others? (Please be honest.)</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputVoice1" name="inputVoice" class="form-check-input" value="q10a">
+                          <label class="form-check-label" for="inputVoice1">Noisy Sound</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputVoice2" name="inputVoice" class="form-check-input" value="q10b">
+                          <label class="form-check-label" for="inputVoice2">Loud Sound</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputVoice3" name="inputVoice" class="form-check-input" value="q10c">
+                          <label class="form-check-label" for="inputVoice3">Soothing Sound</label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3 class="text-center">Skin</h3>
+              <div class="card-body">
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSkinType">1. How you describe your skin type?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinType1" name="inputSkinType" class="form-check-input"
+                            value="q11a">
+                          <label class="form-check-label" for="inputSkinType1">Dry</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinType2" name="inputSkinType" class="form-check-input"
+                            value="q11b">
+                          <label class="form-check-label" for="inputSkinType2">Sensitive</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinType3" name="inputSkinType" class="form-check-input"
+                            value="q11c">
+                          <label class="form-check-label" for="inputSkinType3">Oily</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSkinComplexion">2. How you best describe your complexion?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinComplexion1" name="inputSkinComplexion"
+                            class="form-check-input" value="q12a">
+                          <label class="form-check-label" for="inputSkinComplexion1">Dark</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinComplexion2" name="inputSkinComplexion"
+                            class="form-check-input" value="q12b">
+                          <label class="form-check-label" for="inputSkinComplexion2">Dusky / Whetish</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSkinComplexion3" name="inputSkinComplexion"
+                            class="form-check-input" value="q12c">
+                          <label class="form-check-label" for="inputSkinComplexion3">Fair</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputBodyTemperature">3. During Normal weather describe your body temperature.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBodyTemperature1" name="inputBodyTemperature"
+                            class="form-check-input" value="q13a">
+                          <label class="form-check-label" for="inputBodyTemperature1">Irregular</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBodyTemperature2" name="inputBodyTemperature"
+                            class="form-check-input" value="q13b">
+                          <label class="form-check-label" for="inputBodyTemperature2">Warm</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBodyTemperature3" name="inputBodyTemperature"
+                            class="form-check-input" value="q13c">
+                          <label class="form-check-label" for="inputBodyTemperature3">Cold</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputBodyTemperature4" name="inputBodyTemperature"
+                            class="form-check-input" value="q13b">
+                          <label class="form-check-label" for="inputBodyTemperature4">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSkinComplains">4. What are your main skin complains?</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q14a" id="skinComplains1">
+                          <label class="form-check-label" for="skinComplains1">Darkness and Cracks</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q14b" id="skinComplains2">
+                          <label class="form-check-label" for="skinComplains2">Moles, Pimples and Freckles</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q14c" id="skinComplains3">
+                          <label class="form-check-label" for="skinComplains3">Cloged pores and occasional
+                            breakouts</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <h3 class="text-center">Hair</h3>
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputHairType">1. Describe your hair type.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairType1" name="inputHairType" class="form-check-input"
+                            value="q15a">
+                          <label class="form-check-label" for="inputHairType1">Dry and Thin</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairType2" name="inputHairType" class="form-check-input"
+                            value="q15b">
+                          <label class="form-check-label" for="inputHairType2">Soft and Shiny</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairType3" name="inputHairType" class="form-check-input"
+                            value="q15c">
+                          <label class="form-check-label" for="inputHairType3">Strong and Thick</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputHairColour">2. How your hair colour look under sunlight?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairColour1" name="inputHairColour" class="form-check-input"
+                            value="q16a">
+                          <label class="form-check-label" for="inputHairColour1">Red or Brown ting</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairColour2" name="inputHairColour" class="form-check-input"
+                            value="q16b">
+                          <label class="form-check-label" for="inputHairColour2">White strands</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairColour3" name="inputHairColour" class="form-check-input"
+                            value="q16c">
+                          <label class="form-check-label" for="inputHairColour3">Black</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputScalp">3. Describe your scalp.</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q17a" id="Scalp1">
+                          <label class="form-check-label" for="Scalp1">Dry</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q17b" id="Scalp2">
+                          <label class="form-check-label" for="Scalp2">Red Itchy and prone to boils</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q17c" id="Scalp3">
+                          <label class="form-check-label" for="Scalp3">Oily</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q17a" id="Scalp4">
+                          <label class="form-check-label" for="Scalp4">Scaly with dandruf</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputHairComplaints">4. What are your main hair complaints?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairComplaints1" name="inputHairComplaints"
+                            class="form-check-input" value="q18a">
+                          <label class="form-check-label" for="inputHairComplaints1">Breaks easily</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairComplaints2" name="inputHairComplaints"
+                            class="form-check-input" value="q18b">
+                          <label class="form-check-label" for="inputHairComplaints2">Moderately delicate</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputHairComplaints3" name="inputHairComplaints"
+                            class="form-check-input" value="q18c">
+                          <label class="form-check-label" for="inputHairComplaints3">Resistant to breakdown</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="text-center">Eyes</h3>
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputEyeSize">1. How you best describe your eye size?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyeSize1" name="inputEyeSize" class="form-check-input"
+                            value="q19a">
+                          <label class="form-check-label" for="inputEyeSize1">Small</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyeSize2" name="inputEyeSize" class="form-check-input"
+                            value="q19b">
+                          <label class="form-check-label" for="inputEyeSize2">Normal</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyeSize3" name="inputEyeSize" class="form-check-input"
+                            value="q19c">
+                          <label class="form-check-label" for="inputEyeSize3">Big</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputSclera">2. Describe the Sclera (white part) of your eyes.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSclera1" name="inputSclera" class="form-check-input"
+                            value="q20a">
+                          <label class="form-check-label" for="inputSclera1">White with brownish ting</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSclera2" name="inputSclera" class="form-check-input"
+                            value="q20b">
+                          <label class="form-check-label" for="inputSclera2">White with red ting</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputSclera3" name="inputSclera" class="form-check-input"
+                            value="q20c">
+                          <label class="form-check-label" for="inputSclera3">White and clear</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputEyelash">3. Describe your eyelashes on basis of length and thicknes.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyelash1" name="inputEyelash" class="form-check-input"
+                            value="q21a">
+                          <label class="form-check-label" for="inputEyelash1">Average</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyelash2" name="inputEyelash" class="form-check-input"
+                            value="q21b">
+                          <label class="form-check-label" for="inputEyelash2">Less and thin</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputEyelash3" name="inputEyelash" class="form-check-input"
+                            value="q21c">
+                          <label class="form-check-label" for="inputEyelash3">Long and dense</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="text-center">Teeth and Nails</h3>
+              <div class="card-body">
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputTeethNumber">1. Describe your teeth on basis of number.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethNumber1" name="inputTeethNumber" class="form-check-input"
+                            value="q22a">
+                          <label class="form-check-label" for="inputTeethNumber1">More than 32</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethNumber2" name="inputTeethNumber" class="form-check-input"
+                            value="q22b">
+                          <label class="form-check-label" for="inputTeethNumber2">32</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethNumber3" name="inputTeethNumber" class="form-check-input"
+                            value="q22c">
+                          <label class="form-check-label" for="inputTeethNumber3">Less than 32</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputTeethSize">2. Describe your teeth on basis of size, shape and colour.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethSize1" name="inputTeethSize" class="form-check-input"
+                            value="q23a">
+                          <label class="form-check-label" for="inputTeethSize1">Small, irregular and black</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethSize2" name="inputTeethSize" class="form-check-input"
+                            value="q23b">
+                          <label class="form-check-label" for="inputTeethSize2">Normal, regular and white</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputTeethSize3" name="inputTeethSize" class="form-check-input"
+                            value="q23c">
+                          <label class="form-check-label" for="inputTeethSize3">Big, irregular and white</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputNails">3. Describe your nails</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputNails1" name="inputNails" class="form-check-input" value="q24a">
+                          <label class="form-check-label" for="inputNails1">Thin, rough and breaks easily</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputNails2" name="inputNails" class="form-check-input" value="q24b">
+                          <label class="form-check-label" for="inputNails2">Soft, shiny and moderately delicate</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputNails3" name="inputNails" class="form-check-input" value="q24c">
+                          <label class="form-check-label" for="inputNails3">Strong, thick and resistant to crack</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="text-center">Joints and Movements</h3>
+              <div class="card-body">
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputJoints">1. Describe your joints</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputJoints1" name="inputJoints" class="form-check-input"
+                            value="q25a">
+                          <label class="form-check-label" for="inputJoints1">Painfull / cracking sound on
+                            movement</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputJoints2" name="inputJoints" class="form-check-input"
+                            value="q25b">
+                          <label class="form-check-label" for="inputJoints2">Redness / loose muscle attachment</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputJoints3" name="inputJoints" class="form-check-input"
+                            value="q25c">
+                          <label class="form-check-label" for="inputJoints3">Well attachment of muscle / no cracking
+                            sound</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputWalk">2. Describe your walk</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWalk1" name="inputWalk" class="form-check-input" value="q26a">
+                          <label class="form-check-label" for="inputWalk1">Fast</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWalk2" name="inputWalk" class="form-check-input" value="q26b">
+                          <label class="form-check-label" for="inputWalk2">Moderate</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputWalk3" name="inputWalk" class="form-check-input" value="q26c">
+                          <label class="form-check-label" for="inputWalk3">Slow</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="text-center">Mental Trait</h3>
+              <div class="card-body">
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputMemoryPower">1. Describe your memory power.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMemoryPower1" name="inputMemoryPower" class="form-check-input"
+                            value="q27a">
+                          <label class="form-check-label" for="inputMemoryPower1">Short term</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMemoryPower2" name="inputMemoryPower" class="form-check-input"
+                            value="q27b">
+                          <label class="form-check-label" for="inputMemoryPower2">Moderate</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMemoryPower3" name="inputMemoryPower" class="form-check-input"
+                            value="q27c">
+                          <label class="form-check-label" for="inputMemoryPower3">Long term</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputLearningSkill">2. Describe your learning skill on basis of time.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputLearningSkill1" name="inputLearningSkill"
+                            class="form-check-input" value="q28a">
+                          <label class="form-check-label" for="inputLearningSkill1">Takes more time to learn</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputLearningSkill2" name="inputLearningSkill"
+                            class="form-check-input" value="q28b">
+                          <label class="form-check-label" for="inputLearningSkill2">Average time to learn</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputLearningSkill3" name="inputLearningSkill"
+                            class="form-check-input" value="q28c">
+                          <label class="form-check-label" for="inputLearningSkill3">Takes less time to learn</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputGraspingPower">3. Describe your grasping power</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputGraspingPower1" name="inputGraspingPower"
+                            class="form-check-input" value="q29a">
+                          <label class="form-check-label" for="inputGraspingPower1">Have to read, listen and see more
+                            than
+                            5
+                            times.</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputGraspingPower2" name="inputGraspingPower"
+                            class="form-check-input" value="q29b">
+                          <label class="form-check-label" for="inputGraspingPower2">Have to read, listen and see more
+                            than
+                            3
+                            times.</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputGraspingPower3" name="inputGraspingPower"
+                            class="form-check-input" value="q29c">
+                          <label class="form-check-label" for="inputGraspingPower3">Have to read, listen and see more
+                            than
+                            1
+                            time
+                            or just once.</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputDecisionSkill">4. Describe your decisions making skill.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputDecisionSkill1" name="inputDecisionSkill"
+                            class="form-check-input" value="q30a">
+                          <label class="form-check-label" for="inputDecisionSkill1">Quick</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputDecisionSkill2" name="inputDecisionSkill"
+                            class="form-check-input" value="q30b">
+                          <label class="form-check-label" for="inputDecisionSkill2">Takes enough time</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputDecisionSkill3" name="inputDecisionSkill"
+                            class="form-check-input" value="q30c">
+                          <label class="form-check-label" for="inputDecisionSkill3">Procastinates</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputAngerManagement">5. Describe your anger management.</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAngerManagement1" name="inputAngerManagement"
+                            class="form-check-input" value="q31a">
+                          <label class="form-check-label" for="inputAngerManagement1">Irregular anger management</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAngerManagement2" name="inputAngerManagement"
+                            class="form-check-input" value="q31b">
+                          <label class="form-check-label" for="inputAngerManagement2">Intolerant to anger</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputAngerManagement3" name="inputAngerManagement"
+                            class="form-check-input" value="q31c">
+                          <label class="form-check-label" for="inputAngerManagement3">Good anger tolerance</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputForgiving">6. How forgiving you are?</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputForgiving1" name="inputForgiving" class="form-check-input"
+                            value="q32a">
+                          <label class="form-check-label" for="inputForgiving1">I don't care</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputForgiving2" name="inputForgiving" class="form-check-input"
+                            value="q32b">
+                          <label class="form-check-label" for="inputForgiving2">Hold grudges easily</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputForgiving3" name="inputForgiving" class="form-check-input"
+                            value="q32c">
+                          <label class="form-check-label" for="inputForgiving3">Forgives easily</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <h3 class="text-center">Social Trait</h3>
+              <div class="card-body">
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputFriendCircle">1. Describe your friend circle</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputFriendCircle1" name="inputFriendCircle" class="form-check-input"
+                            value="q33a">
+                          <label class="form-check-label" for="inputFriendCircle1">Private person</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputFriendCircle2" name="inputFriendCircle" class="form-check-input"
+                            value="q33b">
+                          <label class="form-check-label" for="inputFriendCircle2">Small circle (3-5 friends)</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputFriendCircle3" name="inputFriendCircle" class="form-check-input"
+                            value="q33c">
+                          <label class="form-check-label" for="inputFriendCircle3">Large circle (more than 5
+                            friends)</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputConversationSkill">2. Describe your conversation skill</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputConversationSkill1" name="inputConversationSkill"
+                            class="form-check-input" value="q34a">
+                          <label class="form-check-label" for="inputConversationSkill1">Can easily have a long
+                            conversation /
+                            chatty person</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputConversationSkill2" name="inputConversationSkill"
+                            class="form-check-input" value="q34b">
+                          <label class="form-check-label" for="inputConversationSkill2">Enjoys deep and meaningfull
+                            conversation</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputConversationSkill3" name="inputConversationSkill"
+                            class="form-check-input" value="q34c">
+                          <label class="form-check-label" for="inputConversationSkill3">Never initiates a conversation
+                            and
+                            like to
+                            stay reserved</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <!-- Menstrual Trait -->
+              <!-- Only visible if gender selected as Female or other -->
+              <div class="card-body toshow" id="menstrualTrait" style="display:none">
+                <h3 class="text-center mb-4">Menstrual Trait</h3>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputMenstrualFlow">1. Describe your menstrual flow</label>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMenstrualFlow1" name="inputMenstrualFlow"
+                            class="form-check-input" value="q35a">
+                          <label class="form-check-label" for="inputMenstrualFlow1">Irregular</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMenstrualFlow2" name="inputMenstrualFlow"
+                            class="form-check-input" value="q35b">
+                          <label class="form-check-label" for="inputMenstrualFlow2">Heavy</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMenstrualFlow3" name="inputMenstrualFlow"
+                            class="form-check-input" value="q35c">
+                          <label class="form-check-label" for="inputMenstrualFlow3">Light</label>
+                        </div>
+                        <div class="form-check custom-radio">
+                          <input type="radio" id="inputMenstrualFlow4" name="inputMenstrualFlow"
+                            class="form-check-input" value="q35c">
+                          <label class="form-check-label" for="inputMenstrualFlow4">Normal</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputMenstrualBlood">2. Describe the colour of menstrual blood.</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q36a" id="menstrualBlood1">
+                          <label class="form-check-label" for="menstrualBlood1">Brownish with clots</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q36b" id="menstrualBlood2">
+                          <label class="form-check-label" for="menstrualBlood2">Dark red</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q36c" id="menstrualBlood3">
+                          <label class="form-check-label" for="menstrualBlood3">Light red with clots</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputBodilyConcerns">3. Describe your bodily concerns.</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q37a" id="BodilyConcerns1">
+                          <label class="form-check-label" for="BodilyConcerns1">Sharp pain in lower abdomen and lower
+                            back</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q37b" id="BodilyConcerns2">
+                          <label class="form-check-label" for="BodilyConcerns2">Head-ache and vomiting</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q37c" id="BodilyConcerns3">
+                          <label class="form-check-label" for="BodilyConcerns3">Dull pain with swelling and
+                            bloating</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-lg">
+                    <div class="input-group input-group-static">
+                      <div class="text-start">
+                        <label for="inputEmotionalConcerns">4. Describe your emotional concerns.</label>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q38a" id="EmotionalConcerns1">
+                          <label class="form-check-label" for="EmotionalConcerns1">Anxiety and nervousness</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q38b" id="EmotionalConcerns2">
+                          <label class="form-check-label" for="EmotionalConcerns2">Irritability and fustration</label>
+                        </div>
+                        <div class="form-check custom-checkbox">
+                          <input type="checkbox" class="form-check-input" value="q38c" id="EmotionalConcerns3">
+                          <label class="form-check-label" for="EmotionalConcerns3">Emotional crisis and
+                            depression</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
               <div class="row">
-                <div class="col-md">
-                  <div class="input-group input-group-dynamic mb-4">
-                    <label class="form-label">Full Name</label>
-                    <input class="form-control" type="text" name="name" id="inputName">
-                  </div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="input-group input-group-dynamic">
-                  <label class="form-label">Email Address</label>
-                  <input type="email" name="email" class="form-control" id="inputEmail4">
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg-6">
-                  <div class="input-group input-group-static">
-                    <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                    <input class="form-control datepicker" placeholder="Please select your birth date" type="text"
-                      id="inputBirthDate">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="input-group input-group-static">
-                    <select id="inputGender" class="form-control dropdown">
-                      <option selected>Choose your gender...</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                <div class="col-md-12">
+                  <button type="button" class="btn bg-gradient-dark w-100" id="generateReport">Generate Report</button>
                 </div>
               </div>
 
 
-              <div class="row mb-4">
-                <div class="col-lg-6">
-                  <div class="input-group input-group-dynamic mb-4">
-                    <label class="form-label">City</label>
-                    <input class="form-control" type="text" name="city" id="inputCity">
-                  </div>
+              <div class="row py-3">
+                <div class="alert alert-success text-white font-weight-bold alert-success-toshow" role="alert"
+                  style="display:none">
+                  Report generatted.
                 </div>
-                <div class="col-lg-3">
-                  <div class="input-group input-group-dynamic mb-4">
-                    <label class="form-label">Weight in kg</label>
-                    <input class="form-control" type="text" name="weight" id="inputWeight">
-                  </div>
+                <div class="alert alert-danger text-white font-weight-bold alert-dangerpersonal-info-toshow"
+                  role="alert" style="display:none">
+                  Please fill all fields from personal info.
                 </div>
-                <div class="col-lg-3">
-                  <div class="input-group input-group-dynamic mb-4">
-                    <label class="form-label">Height in cm</label>
-                    <input class="form-control" type="text" name="height" id="inputHeight">
-                  </div>
+                <div class="alert alert-danger text-white font-weight-bold alert-dangerall-toshow" role="alert"
+                  style="display:none">
+                  Please answer all questions.
                 </div>
-              </div>
-
-            </div>
-
-            <h3 class="text-center">Physical trait</h3>
-            <div class="card-body">
-
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputBodyType">1. Explain Your Body Type.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="bodyType1" name="bodyType" class="form-check-input" value="q1a">
-                        <label class="form-check-label" for="bodyType1">Thin</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="bodyType2" name="bodyType" class="form-check-input" value="q1b">
-                        <label class="form-check-label" for="bodyType2">Medium</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="bodyType3" name="bodyType" class="form-check-input" value="q1c">
-                        <label class="form-check-label" for="bodyType3">Large</label>
-                      </div>
-                    </div>
-                  </div>
+                <div class="alert alert-danger text-white font-weight-bold alert-dangeremail-toshow" role="alert"
+                  style="display:none">
+                  Invalid email entered! Please enter valid email address.
                 </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class=" text-start">
-                      <label for="inputAppetite">2. How you describe your appetite?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAppetite1" name="inputAppetite" class="form-check-input"
-                          value="q2a">
-                        <label class="form-check-label" for="inputAppetite1">Irregular</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAppetite2" name="inputAppetite" class="form-check-input"
-                          value="q2b">
-                        <label class="form-check-label" for="inputAppetite2">Strong</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAppetite3" name="inputAppetite" class="form-check-input"
-                          value="q2c">
-                        <label class="form-check-label" for="inputAppetite3">Poor</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAppetite4" name="inputAppetite" class="form-check-input"
-                          value="q2d">
-                        <label class="form-check-label" for="inputAppetite4">Normal</label>
-                      </div>
-                    </div>
-                  </div>
+                <div class="alert alert-danger text-white font-weight-bold alert-danger-height" role="alert"
+                  style="display:none">
+                  Invalid height entered! Please enter valid height.
                 </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputPhysicalActivity">3. Describe your physical activity.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputPhysicalActivity1" name="inputPhysicalActivity"
-                          class="form-check-input" value="q3a">
-                        <label class="form-check-label" for="inputPhysicalActivity1">Regular</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputPhysicalActivity2" name="inputPhysicalActivity"
-                          class="form-check-input" value="q3b">
-                        <label class="form-check-label" for="inputPhysicalActivity2">Sometimes</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputPhysicalActivity3" name="inputPhysicalActivity"
-                          class="form-check-input" value="q3c">
-                        <label class="form-check-label" for="inputPhysicalActivity3">Rarely</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSleep">4. How you describe your sleep?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSleep1" name="inputSleep" class="form-check-input" value="q4a">
-                        <label class="form-check-label" for="inputSleep1">Disturbed</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSleep2" name="inputSleep" class="form-check-input" value="q4b">
-                        <label class="form-check-label" for="inputSleep2">Moderate</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSleep3" name="inputSleep" class="form-check-input" value="q4c">
-                        <label class="form-check-label" for="inputSleep3">Sound</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputBowelMovement">5. How you describe your bowel movement?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBowelMovement1" name="inputBowelMovement" class="form-check-input"
-                          value="q5a">
-                        <label class="form-check-label" for="inputBowelMovement1">Constipated</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBowelMovement2" name="inputBowelMovement" class="form-check-input"
-                          value="q5b">
-                        <label class="form-check-label" for="inputBowelMovement2">Frequent</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBowelMovement3" name="inputBowelMovement" class="form-check-input"
-                          value="q5c">
-                        <label class="form-check-label" for="inputBowelMovement3">Normal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSweat">6. How much you sweat?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSweat1" name="inputSweat" class="form-check-input" value="q6a">
-                        <label class="form-check-label" for="inputSweat1">Less</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSweat2" name="inputSweat" class="form-check-input" value="q6b">
-                        <label class="form-check-label" for="inputSweat2">A lot</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSweat3" name="inputSweat" class="form-check-input" value="q6c">
-                        <label class="form-check-label" for="inputSweat3">Normal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputWeather">7. Which weather you prefer?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWeather1" name="inputWeather" class="form-check-input" value="q7a">
-                        <label class="form-check-label" for="inputWeather1">Monsoon</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWeather2" name="inputWeather" class="form-check-input" value="q7b">
-                        <label class="form-check-label" for="inputWeather2">Winter</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWeather3" name="inputWeather" class="form-check-input" value="q7c">
-                        <label class="form-check-label" for="inputWeather3">Spring</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputFood">8. What kind of food you prefer? (Select any two options from below
-                        list)</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8a" id="foodPrefrence1">
-                        <label class="form-check-label" for="foodPrefrence1">Sweet</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8b" id="foodPrefrence2">
-                        <label class="form-check-label" for="foodPrefrence2">Spicy</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8c" id="foodPrefrence3">
-                        <label class="form-check-label" for="foodPrefrence3">Salty</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8d" id="foodPrefrence4">
-                        <label class="form-check-label" for="foodPrefrence4">Sour</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8e" id="foodPrefrence5">
-                        <label class="form-check-label" for="foodPrefrence5">Bitter</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q8f" id="foodPrefrence6">
-                        <label class="form-check-label" for="foodPrefrence6">Astringent</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputThirst">9. How you describe your thirst?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputThirst1" name="inputThirst" class="form-check-input" value="q9a">
-                        <label class="form-check-label" for="inputThirst1">Irregular</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputThirst2" name="inputThirst" class="form-check-input" value="q9b">
-                        <label class="form-check-label" for="inputThirst2">Often Thirsty</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputThirst3" name="inputThirst" class="form-check-input" value="q9c">
-                        <label class="form-check-label" for="inputThirst3">Rarely Thirsty</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputThirst4" name="inputThirst" class="form-check-input" value="q9d">
-                        <label class="form-check-label" for="inputThirst4">Normal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputVoice">10. How your voice sound to others? (Please be honest.)</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputVoice1" name="inputVoice" class="form-check-input" value="q10a">
-                        <label class="form-check-label" for="inputVoice1">Noisy Sound</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputVoice2" name="inputVoice" class="form-check-input" value="q10b">
-                        <label class="form-check-label" for="inputVoice2">Loud Sound</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputVoice3" name="inputVoice" class="form-check-input" value="q10c">
-                        <label class="form-check-label" for="inputVoice3">Soothing Sound</label>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <h3 class="text-center">Skin</h3>
-            <div class="card-body">
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSkinType">1. How you describe your skin type?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinType1" name="inputSkinType" class="form-check-input"
-                          value="q11a">
-                        <label class="form-check-label" for="inputSkinType1">Dry</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinType2" name="inputSkinType" class="form-check-input"
-                          value="q11b">
-                        <label class="form-check-label" for="inputSkinType2">Sensitive</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinType3" name="inputSkinType" class="form-check-input"
-                          value="q11c">
-                        <label class="form-check-label" for="inputSkinType3">Oily</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSkinComplexion">2. How you best describe your complexion?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinComplexion1" name="inputSkinComplexion"
-                          class="form-check-input" value="q12a">
-                        <label class="form-check-label" for="inputSkinComplexion1">Dark</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinComplexion2" name="inputSkinComplexion"
-                          class="form-check-input" value="q12b">
-                        <label class="form-check-label" for="inputSkinComplexion2">Dusky / Whetish</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSkinComplexion3" name="inputSkinComplexion"
-                          class="form-check-input" value="q12c">
-                        <label class="form-check-label" for="inputSkinComplexion3">Fair</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputBodyTemperature">3. During Normal describe your body temperature.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBodyTemperature1" name="inputBodyTemperature"
-                          class="form-check-input" value="q13a">
-                        <label class="form-check-label" for="inputBodyTemperature1">Irregular</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBodyTemperature2" name="inputBodyTemperature"
-                          class="form-check-input" value="q13b">
-                        <label class="form-check-label" for="inputBodyTemperature2">Warm</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBodyTemperature3" name="inputBodyTemperature"
-                          class="form-check-input" value="q13c">
-                        <label class="form-check-label" for="inputBodyTemperature3">Cold</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputBodyTemperature4" name="inputBodyTemperature"
-                          class="form-check-input" value="q13d">
-                        <label class="form-check-label" for="inputBodyTemperature4">Normal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSkinComplains">4. What are your main skin complains?</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q14a" id="skinComplains1">
-                        <label class="form-check-label" for="skinComplains1">Darkness and Cracks</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q14b" id="skinComplains2">
-                        <label class="form-check-label" for="skinComplains2">Moles, Pimples and Freckles</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q14c" id="skinComplains3">
-                        <label class="form-check-label" for="skinComplains3">Cloged pores and occasional
-                          breakouts</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <h3 class="text-center">Hair</h3>
-            <div class="card-body">
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputHairType">1. Describe your hair type.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairType1" name="inputHairType" class="form-check-input"
-                          value="q15a">
-                        <label class="form-check-label" for="inputHairType1">Dry and Thin</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairType2" name="inputHairType" class="form-check-input"
-                          value="q15b">
-                        <label class="form-check-label" for="inputHairType2">Soft and Shiny</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairType3" name="inputHairType" class="form-check-input"
-                          value="q15c">
-                        <label class="form-check-label" for="inputHairType3">Strong and Thick</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputHairColour">2. How your hair colour look under sunlight?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairColour1" name="inputHairColour" class="form-check-input"
-                          value="q16a">
-                        <label class="form-check-label" for="inputHairColour1">Red or Brown ting</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairColour2" name="inputHairColour" class="form-check-input"
-                          value="q16b">
-                        <label class="form-check-label" for="inputHairColour2">White strands</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairColour3" name="inputHairColour" class="form-check-input"
-                          value="q16c">
-                        <label class="form-check-label" for="inputHairColour3">Black</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputScalp">3. Describe your scalp.</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q17a" id="Scalp1">
-                        <label class="form-check-label" for="Scalp1">Dry</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q17b" id="Scalp2">
-                        <label class="form-check-label" for="Scalp2">Red Itchy and prone to boils</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q17c" id="Scalp3">
-                        <label class="form-check-label" for="Scalp3">Oily</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q17d" id="Scalp4">
-                        <label class="form-check-label" for="Scalp4">Scaly with dandruf</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputHairComplaints">4. What are your main hair complaints?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairComplaints1" name="inputHairComplaints"
-                          class="form-check-input" value="q18a">
-                        <label class="form-check-label" for="inputHairComplaints1">Breaks easily</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairComplaints2" name="inputHairComplaints"
-                          class="form-check-input" value="q18b">
-                        <label class="form-check-label" for="inputHairComplaints2">Moderately delicate</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputHairComplaints3" name="inputHairComplaints"
-                          class="form-check-input" value="q18c">
-                        <label class="form-check-label" for="inputHairComplaints3">Resistant to breakdown</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h3 class="text-center">Eyes</h3>
-            <div class="card-body">
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputEyeSize">1. How you best describe your eye size?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyeSize1" name="inputEyeSize" class="form-check-input"
-                          value="q19a">
-                        <label class="form-check-label" for="inputEyeSize1">Small</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyeSize2" name="inputEyeSize" class="form-check-input"
-                          value="q19b">
-                        <label class="form-check-label" for="inputEyeSize2">Normal</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyeSize3" name="inputEyeSize" class="form-check-input"
-                          value="q19c">
-                        <label class="form-check-label" for="inputEyeSize3">Big</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputSclera">2. Describe the Sclera (white part) of your eyes.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSclera1" name="inputSclera" class="form-check-input" value="q20a">
-                        <label class="form-check-label" for="inputSclera1">White with brownish ting</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSclera2" name="inputSclera" class="form-check-input" value="q20b">
-                        <label class="form-check-label" for="inputSclera2">White with red ting</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputSclera3" name="inputSclera" class="form-check-input" value="q20c">
-                        <label class="form-check-label" for="inputSclera3">White and clear</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputEyelash">3. Describe your eyelashes on basis of length and thicknes.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyelash1" name="inputEyelash" class="form-check-input"
-                          value="q21a">
-                        <label class="form-check-label" for="inputEyelash1">Average</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyelash2" name="inputEyelash" class="form-check-input"
-                          value="q21b">
-                        <label class="form-check-label" for="inputEyelash2">Less and thin</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputEyelash3" name="inputEyelash" class="form-check-input"
-                          value="q21c">
-                        <label class="form-check-label" for="inputEyelash3">Long and dense</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h3 class="text-center">Teeth and Nails</h3>
-            <div class="card-body">
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputTeethNumber">1. Describe your teeth on basis of number.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethNumber1" name="inputTeethNumber" class="form-check-input"
-                          value="q22a">
-                        <label class="form-check-label" for="inputTeethNumber1">More than 32</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethNumber2" name="inputTeethNumber" class="form-check-input"
-                          value="q22b">
-                        <label class="form-check-label" for="inputTeethNumber2">32</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethNumber3" name="inputTeethNumber" class="form-check-input"
-                          value="q22c">
-                        <label class="form-check-label" for="inputTeethNumber3">Less than 32</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputTeethSize">2. Describe your teeth on basis of size, shape and colour.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethSize1" name="inputTeethSize" class="form-check-input"
-                          value="q23a">
-                        <label class="form-check-label" for="inputTeethSize1">Small, irregular and black</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethSize2" name="inputTeethSize" class="form-check-input"
-                          value="q23b">
-                        <label class="form-check-label" for="inputTeethSize2">Normal, regular and white</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputTeethSize3" name="inputTeethSize" class="form-check-input"
-                          value="q23c">
-                        <label class="form-check-label" for="inputTeethSize3">Big, irregular and white</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputNails">3. Describe your nails</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputNails1" name="inputNails" class="form-check-input" value="q24a">
-                        <label class="form-check-label" for="inputNails1">Thin, rough and breaks easily</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputNails2" name="inputNails" class="form-check-input" value="q24b">
-                        <label class="form-check-label" for="inputNails2">Soft, shiny and moderately delicate</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputNails3" name="inputNails" class="form-check-input" value="q24c">
-                        <label class="form-check-label" for="inputNails3">Strong, thick and resistant to crack</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <h3 class="text-center">Joints and Movements</h3>
-            <div class="card-body">
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputJoints">1. Describe your joints</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputJoints1" name="inputJoints" class="form-check-input" value="q25a">
-                        <label class="form-check-label" for="inputJoints1">Painfull / cracking sound on movement</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputJoints2" name="inputJoints" class="form-check-input" value="q25b">
-                        <label class="form-check-label" for="inputJoints2">Redness / loose muscle attachment</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputJoints3" name="inputJoints" class="form-check-input" value="q25c">
-                        <label class="form-check-label" for="inputJoints3">Well attachment of muscle / no cracking
-                          sound</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputWalk">2. Describe your walk</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWalk1" name="inputWalk" class="form-check-input" value="q26a">
-                        <label class="form-check-label" for="inputWalk1">Fast</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWalk2" name="inputWalk" class="form-check-input" value="q26b">
-                        <label class="form-check-label" for="inputWalk2">Moderate</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputWalk3" name="inputWalk" class="form-check-input" value="q26c">
-                        <label class="form-check-label" for="inputWalk3">Slow</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h3 class="text-center">Mental Trait</h3>
-            <div class="card-body">
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputMemoryPower">1. Describe your memory power.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMemoryPower1" name="inputMemoryPower" class="form-check-input"
-                          value="q27a">
-                        <label class="form-check-label" for="inputMemoryPower1">Short term</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMemoryPower2" name="inputMemoryPower" class="form-check-input"
-                          value="q27b">
-                        <label class="form-check-label" for="inputMemoryPower2">Moderate</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMemoryPower3" name="inputMemoryPower" class="form-check-input"
-                          value="q27c">
-                        <label class="form-check-label" for="inputMemoryPower3">Long term</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputLearningSkill">2. Describe your learning skill on basis of time.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputLearningSkill1" name="inputLearningSkill" class="form-check-input"
-                          value="q28a">
-                        <label class="form-check-label" for="inputLearningSkill1">Takes more time to learn</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputLearningSkill2" name="inputLearningSkill" class="form-check-input"
-                          value="q28b">
-                        <label class="form-check-label" for="inputLearningSkill2">Average time to learn</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputLearningSkill3" name="inputLearningSkill" class="form-check-input"
-                          value="q28c">
-                        <label class="form-check-label" for="inputLearningSkill3">Takes less time to learn</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputGraspingPower">3. Describe your grasping power</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputGraspingPower1" name="inputGraspingPower" class="form-check-input"
-                          value="q29a">
-                        <label class="form-check-label" for="inputGraspingPower1">Have to read, listen and see more than
-                          5
-                          times.</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputGraspingPower2" name="inputGraspingPower" class="form-check-input"
-                          value="q29b">
-                        <label class="form-check-label" for="inputGraspingPower2">Have to read, listen and see more than
-                          3
-                          times.</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputGraspingPower3" name="inputGraspingPower" class="form-check-input"
-                          value="q29c">
-                        <label class="form-check-label" for="inputGraspingPower3">Have to read, listen and see more than
-                          1
-                          time
-                          or just once.</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputDecisionSkill">4. Describe your decisions making skill.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputDecisionSkill1" name="inputDecisionSkill" class="form-check-input"
-                          value="q30a">
-                        <label class="form-check-label" for="inputDecisionSkill1">Quick</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputDecisionSkill2" name="inputDecisionSkill" class="form-check-input"
-                          value="q30b">
-                        <label class="form-check-label" for="inputDecisionSkill2">Takes enough time</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputDecisionSkill3" name="inputDecisionSkill" class="form-check-input"
-                          value="q30c">
-                        <label class="form-check-label" for="inputDecisionSkill3">Procastinates</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputAngerManagement">5. Describe your anger management.</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAngerManagement1" name="inputAngerManagement"
-                          class="form-check-input" value="q31a">
-                        <label class="form-check-label" for="inputAngerManagement1">Irregular anger management</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAngerManagement2" name="inputAngerManagement"
-                          class="form-check-input" value="q31b">
-                        <label class="form-check-label" for="inputAngerManagement2">Intolerant to anger</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputAngerManagement3" name="inputAngerManagement"
-                          class="form-check-input" value="q31c">
-                        <label class="form-check-label" for="inputAngerManagement3">Good anger tolerance</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputForgiving">6. How forgiving you are?</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputForgiving1" name="inputForgiving" class="form-check-input"
-                          value="q32a">
-                        <label class="form-check-label" for="inputForgiving1">I don't care</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputForgiving2" name="inputForgiving" class="form-check-input"
-                          value="q32b">
-                        <label class="form-check-label" for="inputForgiving2">Hold grudges easily</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputForgiving3" name="inputForgiving" class="form-check-input"
-                          value="q32c">
-                        <label class="form-check-label" for="inputForgiving3">Forgives easily</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <h3 class="text-center">Social Trait</h3>
-            <div class="card-body">
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputFriendCircle">1. Describe your friend circle</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputFriendCircle1" name="inputFriendCircle" class="form-check-input"
-                          value="q33a">
-                        <label class="form-check-label" for="inputFriendCircle1">Private person</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputFriendCircle2" name="inputFriendCircle" class="form-check-input"
-                          value="q33b">
-                        <label class="form-check-label" for="inputFriendCircle2">Small circle (3-5 friends)</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputFriendCircle3" name="inputFriendCircle" class="form-check-input"
-                          value="q33c">
-                        <label class="form-check-label" for="inputFriendCircle3">Large circle (more than 5
-                          friends)</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputConversationSkill">2. Describe your conversation skill</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputConversationSkill1" name="inputConversationSkill"
-                          class="form-check-input" value="q34a">
-                        <label class="form-check-label" for="inputConversationSkill1">Can easily have a long
-                          conversation /
-                          chatty person</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputConversationSkill2" name="inputConversationSkill"
-                          class="form-check-input" value="q34b">
-                        <label class="form-check-label" for="inputConversationSkill2">Enjoys deep and meaningfull
-                          conversation</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputConversationSkill3" name="inputConversationSkill"
-                          class="form-check-input" value="q34c">
-                        <label class="form-check-label" for="inputConversationSkill3">Never initiates a conversation and
-                          like to
-                          stay reserved</label>
-                      </div>
-                    </div>
-                  </div>
+                <div class="alert alert-danger text-white font-weight-bold alert-danger-weight" role="alert"
+                  style="display:none">
+                  Invalid weight entered! Please enter valid weight.
                 </div>
               </div>
 
 
-            </div>
+            </form>
 
-            <!-- Menstrual Trait -->
-            <!-- Only visible if gender selected as Female or other -->
-            <div class="card-body toshow" id="menstrualTrait" style="display:none">
-              <h3 class="text-center mb-4">Menstrual Trait</h3>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputMenstrualFlow">1. Describe your menstrual flow</label>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMenstrualFlow1" name="inputMenstrualFlow" class="form-check-input"
-                          value="q35a">
-                        <label class="form-check-label" for="inputMenstrualFlow1">Irregular</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMenstrualFlow2" name="inputMenstrualFlow" class="form-check-input"
-                          value="q35b">
-                        <label class="form-check-label" for="inputMenstrualFlow2">Heavy</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMenstrualFlow3" name="inputMenstrualFlow" class="form-check-input"
-                          value="q35c">
-                        <label class="form-check-label" for="inputMenstrualFlow3">Light</label>
-                      </div>
-                      <div class="form-check custom-radio">
-                        <input type="radio" id="inputMenstrualFlow4" name="inputMenstrualFlow" class="form-check-input"
-                          value="q35d">
-                        <label class="form-check-label" for="inputMenstrualFlow4">Normal</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputMenstrualBlood">2. Describe the colour of menstrual blood.</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q36a" id="menstrualBlood1">
-                        <label class="form-check-label" for="menstrualBlood1">Brownish with clots</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q36b" id="menstrualBlood2">
-                        <label class="form-check-label" for="menstrualBlood2">Dark red</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q36c" id="menstrualBlood3">
-                        <label class="form-check-label" for="menstrualBlood3">Light red with clots</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputBodilyConcerns">3. Describe your bodily concerns.</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q37a" id="BodilyConcerns1">
-                        <label class="form-check-label" for="BodilyConcerns1">Sharp pain in lower abdomen and lower
-                          back</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q37b" id="BodilyConcerns2">
-                        <label class="form-check-label" for="BodilyConcerns2">Head-ache and vomiting</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q37c" id="BodilyConcerns3">
-                        <label class="form-check-label" for="BodilyConcerns3">Dull pain with swelling and
-                          bloating</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-lg">
-                  <div class="input-group input-group-static">
-                    <div class="text-start">
-                      <label for="inputEmotionalConcerns">4. Describe your emotional concerns.</label>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q38a" id="EmotionalConcerns1">
-                        <label class="form-check-label" for="EmotionalConcerns1">Anxiety and nervousness</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q38b" id="EmotionalConcerns2">
-                        <label class="form-check-label" for="EmotionalConcerns2">Irritability and fustration</label>
-                      </div>
-                      <div class="form-check custom-checkbox">
-                        <input type="checkbox" class="form-check-input" value="q38c" id="EmotionalConcerns3">
-                        <label class="form-check-label" for="EmotionalConcerns3">Emotional crisis and depression</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+            <div class="report-toshow" style="display:none">
+              <div id="report"></div>
             </div>
 
           </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <button type="submit" class="btn bg-gradient-dark w-100" id="generateReport">Generate Report</button>
-            </div>
-          </div>
-          </form>
         </div>
       </div>
   </div>
