@@ -24,13 +24,13 @@ $(document).ready(function () {
       $("div.alert-danger-height").show();
       setTimeout(() => {
         $("div.alert-danger-height").hide();
-      }, 3000);
+      }, 4500);
     } else if (weight === "" || isNaN(weight)) {
       personalInfo.bmiResult = "Provide a valid Weight!";
       $("div.alert-danger-weight").show();
       setTimeout(() => {
         $("div.alert-danger-weight").hide();
-      }, 3000);
+      }, 4500);
     }
     // If both input is valid, calculate the bmi
     else {
@@ -150,13 +150,13 @@ $(document).ready(function () {
       $("div.alert-dangerpersonal-info-toshow").show();
       setTimeout(() => {
         $("div.alert-dangerpersonal-info-toshow").hide();
-      }, 3000);
+      }, 4500);
       return false;
     } else if (!personalInfo.email.match(emailReg)) {
       $("div.alert-dangeremail-toshow").show();
       setTimeout(() => {
         $("div.alert-dangeremail-toshow").hide();
-      }, 3000);
+      }, 4500);
       return false;
     }
 
@@ -180,7 +180,7 @@ $(document).ready(function () {
       $("div.alert-dangerall-toshow").show();
       setTimeout(() => {
         $("div.alert-dangerall-toshow").hide();
-      }, 3000);
+      }, 4500);
       return false;
     }
 
@@ -213,7 +213,7 @@ $(document).ready(function () {
       $("div.alert-success-toshow").show();
       setTimeout(() => {
         $("div.alert-success-toshow").hide();
-      }, 3000);
+      }, 4500);
 
       $.map($("input:radio:checked"), function (elem, idx) {
         data.questionerSingleOption[$(elem).attr("name")] = $(elem).val();
