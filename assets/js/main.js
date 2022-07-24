@@ -116,8 +116,8 @@ $(document).ready(function () {
 
     allScore = [data.score.pitta, data.score.kaph, data.score.vaat].sort();
     difference1 = allScore[2] - allScore[1];
-    difference2 = allScore[1] - allScore[0];
-    if (difference1 <= 7 && difference2 <= 7) {
+    difference2 = allScore[2] - allScore[0];
+    if (difference1 <= 7 && difference2 <= 3) {
       // say all
       data.prakriti = "Tridosha";
     } else if (difference1 <= 7) {
