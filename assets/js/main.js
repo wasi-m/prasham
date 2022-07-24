@@ -104,30 +104,30 @@ $(document).ready(function () {
   }
 
   function getPrakriti(data) {
+    var items = Object.keys(data.score).map((key) => {
+      return [key, data.score[key]];
+    });
+    items.sort((first, second) => {
+      return first[1] - second[1];
+    });
+    var keys = items.map((e) => {
+      return e[0];
+    });
+
     allScore = [data.score.pitta, data.score.kaph, data.score.vaat].sort();
-    difference = allScore[2] - allScore[1];
-    if (difference <= 7) {
+    difference1 = allScore[2] - allScore[1];
+    difference2 = allScore[1] - allScore[0];
+    if (difference1 <= 7 && difference2 <= 7) {
+      // say all
+      data.prakriti = "Tridosha";
+    } else if (difference1 <= 7) {
       // add 2 and 1
-      var prakriti1 = "";
-      var prakriti2 = "";
-      Object.keys(data.score).forEach(function (key) {
-        if (data.score[key] === allScore[2]) {
-          prakriti1 = key;
-        }
-        if (data.score[key] === allScore[1]) {
-          prakriti2 = key;
-        }
-        data.prakriti = prakriti1 + " and " + prakriti2;
-      });
+      var prakriti1 = keys[2];
+      var prakriti2 = keys[1];
+      data.prakriti = prakriti1 + " and " + prakriti2;
     } else {
       // return only 1
-      var prakriti = "";
-      Object.keys(data.score).forEach(function (key) {
-        if (data.score[key] === allScore[2]) {
-          prakriti = key;
-        }
-        data.prakriti = prakriti;
-      });
+      data.prakriti = keys[2];
     }
   }
 
@@ -207,8 +207,11 @@ $(document).ready(function () {
     data.personalInfo.height = document.getElementById("inputHeight").value;
     data.personalInfo.weight = document.getElementById("inputWeight").value;
 
-    if (validation(data.personalInfo)) {
+    if (!validation(data.personalInfo)) {
       // Calling validation function
+
+      findJanmaKalaPrakriti(data.personalInfo);
+      calculateBMI(data.personalInfo);
 
       $("div.alert-success-toshow").show();
       setTimeout(() => {
@@ -259,17 +262,39 @@ $(document).ready(function () {
       $("form.form-tohide").hide();
 
       $("#head-toedit").text("Prakriti Parikshan Report");
-      var reportDiv = document.getElementById("report");
-      var testDiv = document.createElement("div");
+      var intro = document.getElementById("intro");
+      intro.innerHTML = "Hello " + data.personalInfo.name + "!";
 
-      testDiv.innerHTML =
-        "<p> Hello " +
-        data.personalInfo.name +
-        "! Thanks for taking our Prakriti Parikshan. \n Your Prakriti is " +
-        data.prakriti +
-        "</p>";
+      var report = document.getElementById("report");
+      report.innerHTML = "<b>Your Prakriti is " + data.prakriti + "</b>";
 
-      reportDiv.appendChild(testDiv);
+      var p_vaat = document.getElementById("p-vaat");
+      p_vaat.innerHTML = "<b>You have " + data.score.vaat + " guna of vaat</b>";
+      var p_pitta = document.getElementById("p-pitta");
+      p_pitta.innerHTML =
+        "<b>You have " + data.score.pitta + " guna of pitta</b>";
+      var p_kaph = document.getElementById("p-kaph");
+      p_kaph.innerHTML = "<b>You have " + data.score.kaph + " guna of kaph</b>";
+
+      var p_nakshtras = document.getElementById("p-nakshtras");
+      p_nakshtras.innerHTML =
+        "<b>According to your birthdate, your Sun Sign is " +
+        data.personalInfo.sign +
+        "</b>";
+      var p_beej = document.getElementById("p-beej");
+      p_beej.innerHTML =
+        "<b>Your Beejprakriti is " +
+        data.personalInfo.janmaKalaPrakriti +
+        "</b>";
+      var p_season = document.getElementById("p-season");
+      p_season.innerHTML =
+        "<b>Your Janma Rutu is " + data.personalInfo.rutu + "</b>";
+
+      var p_bmi = document.getElementById("p-bmi");
+      p_bmi.innerHTML =
+        "<b>According to your weight and height, you are " +
+        data.personalInfo.bmiResult +
+        "</b>";
 
       $("div.report-toshow").show();
     }
