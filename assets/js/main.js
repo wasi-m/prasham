@@ -207,11 +207,8 @@ $(document).ready(function () {
     data.personalInfo.height = document.getElementById("inputHeight").value;
     data.personalInfo.weight = document.getElementById("inputWeight").value;
 
-    if (!validation(data.personalInfo)) {
+    if (validation(data.personalInfo)) {
       // Calling validation function
-
-      findJanmaKalaPrakriti(data.personalInfo);
-      calculateBMI(data.personalInfo);
 
       $("div.alert-success-toshow").show();
       setTimeout(() => {
